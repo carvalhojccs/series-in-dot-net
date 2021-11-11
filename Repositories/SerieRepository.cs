@@ -9,32 +9,32 @@ namespace DIO.Series.Repositories
         private List<SerieEntity> listSeries = new List<SerieEntity>();
         public void delete(int id)
         {
-            throw new System.NotImplementedException();
+            listSeries[id].Delete();
         }
 
         public SerieEntity findById(int id)
         {
-            throw new System.NotImplementedException();
+            return listSeries[id];
         }
 
         public void insert(SerieEntity entity)
         {
-            throw new System.NotImplementedException();
+            listSeries.Add(entity);
         }
 
-        public System.Collections.Generic.List<SerieEntity> list()
+        public List<SerieEntity> list()
         {
-            throw new System.NotImplementedException();
+            return listSeries;
         }
 
         public int nextId()
         {
-            throw new System.NotImplementedException();
+            return listSeries.Count;
         }
 
         public void update(int id, SerieEntity entity)
         {
-            throw new System.NotImplementedException();
+            listSeries[id] = entity;
         }
     }
 }

@@ -9,7 +9,6 @@ namespace DIO.Series.Interfaces
          void insert(T entity);
         void delete(int id);
         void update(int id, T entity);
-        int nextId();
-         
+        int nextId();         
     }
 }

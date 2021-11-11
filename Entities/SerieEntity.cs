@@ -11,15 +11,22 @@ namespace DIO.Series.Entities
 
         private int year {get; set; }
 
+        private bool excluded {get; set; }
+
         //Construct method
-        public SerieEntity (int id, GenderEnum gender, string title, string description, int year, bool active)
+        public SerieEntity (
+            int id, 
+            GenderEnum gender, 
+            string title, 
+            string description, 
+            int year)
     {
         this.id = id;
         this.gender = gender;
         this.title = title;
         this.description = description;
         this.year = year;
-        this.active = false;
+        this.excluded = false;
     }
 
     //ToString method
@@ -31,7 +38,7 @@ namespace DIO.Series.Entities
         showSerie += "Título: " + this.title + Environment.NewLine;
         showSerie += "Descrição: " + this.description + Environment.NewLine;
         showSerie += "Ano de início: " + this.year + Environment.NewLine;
-        showSerie += "Ativo: " + this.active + Environment.NewLine;
+        showSerie += "Excluído: " + this.excluded + Environment.NewLine;
 
         return showSerie;
     }
@@ -45,7 +52,16 @@ namespace DIO.Series.Entities
     {
         return this.id;
     }
-}
 
-    
+    public bool GetExcluded()
+    {
+        return this.excluded;
+    }
+
+    public void Delete()
+    {
+        this.excluded = true;
+    }
+}
+   
 }
